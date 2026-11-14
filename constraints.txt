@@ -1,0 +1,29 @@
+# Exact versions of the tested environment (Python 3.10.9, CPU-only JAX), read from the
+# research virtual environment on 2026-11-12. Reproduce it from a clone with
+#
+#     pip install -c constraints.txt -e .
+#
+# or, with the test, experiment-layer and figure extras,
+#
+#     pip install -c constraints.txt -e '.[dev,experiments,figures]'
+#
+# A constraints file pins versions without adding requirements, so extras you do not ask for
+# stay absent. Pixel identity with the reference figures is expected only with these
+# matplotlib, numpy and Pillow versions (see figures/requirements.txt).
+numpy==2.2.6
+jax==0.6.2
+jaxlib==0.6.2
+numpyro==0.19.0
+arviz==0.23.4
+xarray==2025.6.1
+pandas==2.2.3
+pydantic==2.13.4
+langchain-core==1.6.7
+langchain-anthropic==1.6.1
+langgraph==1.2.4
+python-dotenv==1.2.3
+requests==2.34.2
+matplotlib==3.10.9
+pillow==12.2.0
+pypdf==6.19.0
+scipy==1.15.3

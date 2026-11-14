@@ -1,0 +1,80 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "compass-refine"
+version = "0.3.0"
+description = "COMPASS: statistically verified refinement of probabilistic programs with literature-grounded LLM agents and a no-LLM MCMC verifier"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Mariano Gabitto" }]
+# PEP 639. The Allen Institute Software License (2-clause BSD plus a non-commercial clause) has
+# no SPDX identifier, so the expression is a LicenseRef and the text ships as LICENSE.txt.
+license = "LicenseRef-Allen-Institute-Software-License"
+license-files = ["LICENSE.txt"]
+keywords = ["bayesian", "probabilistic-programming", "numpyro", "llm-agents", "model-criticism"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.26",
+    "jax>=0.6",
+    "numpyro>=0.18",
+    # arviz 1.x (Python 3.12 and newer only) removes arviz.waic, which the verifier calls
+    "arviz>=0.22,<1",
+    "pydantic>=2.6",
+    "langchain-core>=1.4",
+    "langchain-anthropic>=1.4",
+    "langgraph>=1.2",
+    "pandas>=2.0",
+    "python-dotenv>=1.0",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+stan = ["cmdstanpy>=1.2"]
+# the dense embedder of agents.retrieval; the default hashing embedder needs nothing extra
+retrieval = ["sentence-transformers>=3"]
+# OpenAI and Google clients for get_llm(provider="openai" | "google"); brotli is a runtime
+# need of the OpenAI HTTP client.
+providers = ["langchain-openai", "langchain-google-genai", "brotli>=1.2"]
+# the figure code under figures/ (drawing; the run and score steps need only the package): matplotlib
+# panels, Pillow composites (sized default fonts need
+# Pillow 10.1, see figures/requirements.txt) and pypdf page assembly. pypdf 7 writes the two
+# composite sheets at half their page size, so figures/compare_pdf.py reports them as
+# DIFFERENT from the reference, which pypdf 6 wrote.
+figures = ["matplotlib>=3.8", "pillow>=10.1", "pypdf>=4,<7"]
+
+[project.urls]
+Homepage = "https://github.com/M-Lab-Repo/compass"
+Source = "https://github.com/M-Lab-Repo/compass"
+Issues = "https://github.com/M-Lab-Repo/compass/issues"
+Changelog = "https://github.com/M-Lab-Repo/compass/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["compass*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+# first-party roots: the package, the figure code (figures/figureN, figures/bench) and the
+# top-level tests/ and tools/ directories
+src = [".", "src", "figures"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/compass/fixtures/golden_data.py" = ["E701", "E702"]
+# the copies of the research figure pipeline and benchmark modules keep the research import order
+"figures/figure*/*.py" = ["I001"]
+"figures/bench/*.py" = ["I001"]

@@ -1,0 +1,12 @@
+# Source distribution contents beyond what setuptools adds on its own (the compass package,
+# README.md, LICENSE.txt and pyproject.toml): the package test suite with its configuration,
+# the examples and the skill (tests/test_examples.py runs them), the sync tools and the release
+# metadata, so that `pytest` runs from an unpacked sdist. The figure tests stay out: they test
+# figures/, which the distribution does not carry.
+include pytest.ini AGENT_GUIDE.md CHANGELOG.md CITATION.cff constraints.txt
+recursive-include tests *.py
+prune tests/figures
+recursive-include tools *.py
+graft examples
+graft skill
+global-exclude __pycache__ *.pyc

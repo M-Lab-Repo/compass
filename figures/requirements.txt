@@ -1,0 +1,16 @@
+# The environment that rendered the reference figures (Python 3.10.9): the eleven PDFs of
+# figures/reference_manifest.json. The figure code runs on any recent matplotlib, numpy and
+# Pillow (Pillow 10.1 or newer is needed for sized default fonts in the composites), but byte
+# identity dates aside with the reference PDFs is expected only with these exact versions,
+# because glyph rasterisation and PDF object layout differ between matplotlib builds.
+matplotlib==3.10.9
+numpy==2.2.6
+pillow==12.2.0
+# the one-page vector sheets (figure2_compose.py, figure3_compose.py) and figures/compare_pdf.py.
+# Pinned: pypdf 7 writes the composite sheets differently (another
+# object layout, so other bytes and hashes than the reference PDFs); the `figures` extra of
+# pyproject.toml keeps pypdf below 7 for the same reason.
+pypdf==6.19.0
+# tests and lint only
+pytest>=8
+ruff>=0.6

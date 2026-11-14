@@ -1,0 +1,23 @@
+{
+  "upload_type": "software",
+  "title": "COMPASS: statistically verified refinement of probabilistic programs",
+  "version": "0.3.0",
+  "description": "COMPASS refines Bayesian models written as NumPyro programs. Language-model agents diagnose the model, search the statistical literature and propose candidate refinements, while a deterministic verifier with no language model in it fits the baseline and the candidate with MCMC and accepts a refinement only when a fixed statistical rule is met. The benchmark records behind the paper's figures are distributed as an asset of the GitHub release, not as part of this archive.",
+  "license": "other-nc",
+  "access_right": "open",
+  "keywords": [
+    "bayesian statistics",
+    "probabilistic programming",
+    "numpyro",
+    "model criticism",
+    "cross-validation",
+    "mcmc",
+    "llm agents"
+  ],
+  "creators": [
+    {
+      "name": "Gabitto, Mariano",
+      "affiliation": "Allen Institute"
+    }
+  ]
+}

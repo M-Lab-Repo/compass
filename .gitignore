@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+.env
+.compass_cache/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+figures/out/
+figures/.test_cache/
+figures/runs/
+runs/

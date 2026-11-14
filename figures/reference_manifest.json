@@ -1,0 +1,105 @@
+{
+ "source": "renders of the research figure2/, figure3/ and figure4/ scripts at commit 835b750 from the benchmark records at 2c66219, written by figures/render.py on 2026-11-14 with SOURCE_DATE_EPOCH=0; they match the research Submission/figures working tree of 2026-11-12 in everything but the date stamp (the Figure 3 PDFs are not committed there, and the committed Figure 2 PDFs predate 835b750)",
+ "method": "sha256_dateless: SHA-256 of the PDF bytes after the value of every /CreationDate and /ModDate (D:YYYYMMDDhhmmss followed by Z or by a timezone offset such as -05'00', any length) is replaced by zeros of the same length, so every other byte, fonts, coordinates and text included, must agree; sha256_drawing: SHA-256 of a canonical serialisation of every page as pypdf parses it (the page dictionary without /Parent, indirect references resolved, dictionary keys sorted, streams decoded), which depends on what is drawn and not on the Info dictionary, object numbers, compression or byte offsets. A render in a non-UTC timezone without SOURCE_DATE_EPOCH carries a date stamp six bytes longer than the UTC form and so agrees only in sha256_drawing (figures/compare_pdf.py)",
+ "files": {
+  "fig2a_editable.pdf": {
+   "sha256_dateless": "6740adeb7a0cf0c3bee6ffa949cfa2e265f0b4d45e5e4655dc4636f4ff2d8d68",
+   "sha256_drawing": "abf6675acac19ebe6d49164fd3f6067b7386e3effdff5b3e11195b4a0408611f",
+   "bytes": 36271,
+   "pages": 1,
+   "width_pt": 504.0,
+   "height_pt": 529.92,
+   "dates_neutralised": 1
+  },
+  "fig2b_editable.pdf": {
+   "sha256_dateless": "b75a8b9b4bb0817d8c04ece65058c63ea40332b5ca874e7d9366096073b1c240",
+   "sha256_drawing": "9e38b424f6b08920c81e2f4c841dc2ac3434d3cd2481286afe4c2cefe5a92026",
+   "bytes": 34004,
+   "pages": 1,
+   "width_pt": 504.0,
+   "height_pt": 1281.6,
+   "dates_neutralised": 1
+  },
+  "fig2c_editable.pdf": {
+   "sha256_dateless": "8f4d68ce95b3b169561091b3a9d79b1d48f747fbfd6f9328e1c9486384235926",
+   "sha256_drawing": "fee1c0117c14b5de2962385353b586de671ba5b8ae8842e42d93a56d3a2f5522",
+   "bytes": 23380,
+   "pages": 1,
+   "width_pt": 504.0,
+   "height_pt": 259.2,
+   "dates_neutralised": 1
+  },
+  "fig2d_editable.pdf": {
+   "sha256_dateless": "54cb6bd752ad8ab5f4425da7c06369beadd701017e9cf1bb5f32c72c5160de2a",
+   "sha256_drawing": "f0ffdd2aeef6de3de89dd6a1ec37e87b5b7e48fec9e80c30a985a0a4fd5378bf",
+   "bytes": 22962,
+   "pages": 1,
+   "width_pt": 468.0,
+   "height_pt": 388.8,
+   "dates_neutralised": 1
+  },
+  "fig2_composite_editable.pdf": {
+   "sha256_dateless": "6dc60888a71513f7eef82cec5e294a715433c59fd108173b4bd41db73d5e480d",
+   "sha256_drawing": "fe38e9797d3218532cf5d6eea1883fc9de452092e9934896b4f9f4324bca9812",
+   "bytes": 450382,
+   "pages": 1,
+   "width_pt": 1043.15,
+   "height_pt": 1243.83,
+   "dates_neutralised": 0
+  },
+  "fig3a_editable.pdf": {
+   "sha256_dateless": "9140d025b9dabff54d92255cf13818a2b94be81594d5fbfa693a66f10ff4ee0d",
+   "sha256_drawing": "0b487cab1f473a4ac96b2b2dae69b78ef0c2daf657465799c2087d41101f28fb",
+   "bytes": 31638,
+   "pages": 1,
+   "width_pt": 331.2,
+   "height_pt": 295.2,
+   "dates_neutralised": 1
+  },
+  "fig3b_editable.pdf": {
+   "sha256_dateless": "f7f4ef4c34777ca8a24ca26b8e3240cb403662eb8d5400e6d0dff7ebd4690425",
+   "sha256_drawing": "e46341dee71c1afef21492e54aea6580ff363dc4c6ef794f2cc8a620bf2641a5",
+   "bytes": 33998,
+   "pages": 1,
+   "width_pt": 489.6,
+   "height_pt": 244.8,
+   "dates_neutralised": 1
+  },
+  "fig3c_editable.pdf": {
+   "sha256_dateless": "1bb523fd16b90ccd0a13131ac48b001e535255cda3aec45291f4c890f0f79d29",
+   "sha256_drawing": "cab67c9a0aa6d7bc79534cd20fa531262c370c936765dc6a4cbce39ea6fa834b",
+   "bytes": 31503,
+   "pages": 1,
+   "width_pt": 331.2,
+   "height_pt": 295.2,
+   "dates_neutralised": 1
+  },
+  "fig3d_editable.pdf": {
+   "sha256_dateless": "7aa549376fb54443ba2b9c03b453148986e489b4cba96719a1eb0321d6b6156c",
+   "sha256_drawing": "e48fca5cc1fadf7c718733cb059cd23e1e41b51a3212f00263bfc6254253449a",
+   "bytes": 34682,
+   "pages": 1,
+   "width_pt": 468.0,
+   "height_pt": 446.4,
+   "dates_neutralised": 1
+  },
+  "fig3_composite_editable.pdf": {
+   "sha256_dateless": "f689cc4225a705e388a82409cba83bee37a37659cf9ac2e9f28557e48d285754",
+   "sha256_drawing": "c18df0d6d75c58e14c8fbbd785114a5f94f337c7dbc056d875ada41b7ca9eb44",
+   "bytes": 366897,
+   "pages": 1,
+   "width_pt": 1033.2,
+   "height_pt": 1041.39,
+   "dates_neutralised": 0
+  },
+  "fig4_cost_editable.pdf": {
+   "sha256_dateless": "472a85dfe3dea0e06e4d4ca5c8c00f5a04b9a1d60a150a93dd7e414534362829",
+   "sha256_drawing": "797e6fd16edda805123a06a8fe1e3d89a41a6c68fdc7fb3000ac09dc336ec97f",
+   "bytes": 32836,
+   "pages": 1,
+   "width_pt": 518.4,
+   "height_pt": 460.8,
+   "dates_neutralised": 1
+  }
+ }
+}

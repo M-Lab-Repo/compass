@@ -1,0 +1,775 @@
+{
+ "_comment": "Provenance of figures/: copies of the research repository's figure pipeline (figure2/, figure3/, figure4/) and of the four benchmark modules it imports (bench/), written by tools/sync_figures.py (regenerate with --research; verify with --check). Every entry of `files` names a copy (path under figures/), its research source (the same path under the research root), the sha256 of both, and the windows the tool rewrote (`rewritten`: line number, the copied text, the sha256 of the research text; they drop the research tree's eighth real dataset and the arm run on it, which this repository does not distribute, and make two roots configurable). Import lines of the pipeline are rewritten to the compass package (`import_map` maps them back). tools/check_provenance.py --manifest figures/provenance.json compares every top-level definition and statement with the research file, enforces the import block, and fails on any difference the manifest does not allow (`repointed`, `dropped`, `dropped_patterns`, `new_imports`). `research_commit` is the research HEAD the copies were generated from; `research_sources_dirty` lists uncommitted changes to the sources at that time (empty when the sources were clean).",
+ "generator": "tools/sync_figures.py",
+ "research_commit": "8e04643d43bd27d50b0913eff612dceff207919d",
+ "research_commit_short": "8e04643",
+ "research_sources_dirty": [],
+ "copied_on": "2026-11-14",
+ "imports": "enforce",
+ "import_map": {
+  "compass": ""
+ },
+ "files": {
+  "figure2/__init__.py": {
+   "source": "figure2/__init__.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "ffcc4dff3e6e7f751cf323d1309933f984a0e447b905b4d1388d84fe08757aff",
+   "sha256_copy": "ffcc4dff3e6e7f751cf323d1309933f984a0e447b905b4d1388d84fe08757aff",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure2/figure2_common.py": {
+   "source": "figure2/figure2_common.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "12d062313bdca58e5b03e803c7214a84bbaf9f3f132a00479dbeb66d94da7d20",
+   "sha256_copy": "12d062313bdca58e5b03e803c7214a84bbaf9f3f132a00479dbeb66d94da7d20",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure2/figure2_compose.py": {
+   "source": "figure2/figure2_compose.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "b0fb606a3f509f74952bc75bf5c2083a529bd6bada90321fc9927acd4cf7e147",
+   "sha256_copy": "b0fb606a3f509f74952bc75bf5c2083a529bd6bada90321fc9927acd4cf7e147",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure2/figure2_protocols.py": {
+   "source": "figure2/figure2_protocols.py",
+   "kind": "full",
+   "repointed": [
+    "ARM_PROTOCOLS",
+    "condition"
+   ],
+   "dropped": [
+    "REAL_PUBLISHED"
+   ],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "504ffd99486511e5ed25fc08b15e18a7fc23e4da5ea86794cc6178715412e122",
+   "sha256_copy": "b5dbe6276ea5239d95ff025dbc531b3319cf020c88d82d64a2c974a8f4f0fdcc",
+   "rewritten": [
+    {
+     "line": 7,
+     "research_lines": 2,
+     "copy": "Figure 2 reads the first ten arms (CENSUS_ARMS); the eleventh, run by the same engine, is read\nby Figure 4 (real data at the default budget). The",
+     "research_sha256": "a3d56feb91a72456125ca5a66e7a8d3ca675aae5cb02f4fa522883b825911513"
+    },
+    {
+     "line": 56,
+     "research_lines": 2,
+     "copy": "",
+     "research_sha256": "8170d2a2c30fd3903504594617c9df37b81e6d492cbcb899a0ac761c5a088d91"
+    },
+    {
+     "line": 99,
+     "research_lines": 3,
+     "copy": "    # one more census arm, same engine, read by Figure 4 (not by Figure 2)",
+     "research_sha256": "4971984b9d41e60efcba387053c9f1ff230014e1ffb69a205e5b54792fda3826"
+    },
+    {
+     "line": 112,
+     "research_lines": 1,
+     "copy": "    if name.startswith(\"real-data\") or \"realdata\" in name:",
+     "research_sha256": "1378fc7ee56afbada9915c9a873f3404e9984a867375ef103d92c35933161a9c"
+    }
+   ],
+   "notes": "window(s) at line(s) 7, 56, 99, 112 rewritten; everything else verbatim modulo imports"
+  },
+  "figure2/figure2_run.py": {
+   "source": "figure2/figure2_run.py",
+   "kind": "full",
+   "repointed": [
+    "CACHE"
+   ],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [
+    "import os"
+   ],
+   "dropped_imports": [],
+   "sha256_source": "4573688c7a901e1b0ca343ae51913b12041988c9a81ec96fc6d3fcd0d6598be4",
+   "sha256_copy": "3f8b9ace146deb542b5f025500861d35c8162b787d40bcacea7f729a4aea9142",
+   "rewritten": [
+    {
+     "line": 46,
+     "research_lines": 1,
+     "copy": "CACHE = Path(os.environ.get(\"COMPASS_CACHE_DIR\", CODE_DIR / \".test_cache\"))  # MCMC trace cache; research: CODE_DIR / \".test_cache\"",
+     "research_sha256": "c581e260e4043e403e5a462c42ae42bc46ba46fefe2bdda873a942372364c188"
+    }
+   ],
+   "notes": "window(s) at line(s) 46 rewritten; everything else verbatim modulo imports"
+  },
+  "figure2/figure2_score.py": {
+   "source": "figure2/figure2_score.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "b0eb28a2868893f034b134fbec1730fd77aa02664137a8f0dd0fc88f85c6041c",
+   "sha256_copy": "0c3919bc73820f920b728ed8203d4f80c7d86eeb11cfbd2582c050546d935563",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure2/figure2a_create.py": {
+   "source": "figure2/figure2a_create.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "a5d285e37b59f89c9f2385f1e746585c3c209646877ce2af6a3e850a52a01c4a",
+   "sha256_copy": "a5d285e37b59f89c9f2385f1e746585c3c209646877ce2af6a3e850a52a01c4a",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure2/figure2a_run.py": {
+   "source": "figure2/figure2a_run.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "49465de4236a0fe346516efe1d538d6dce7db44798e9529a7c0a52ad60f49a9f",
+   "sha256_copy": "49465de4236a0fe346516efe1d538d6dce7db44798e9529a7c0a52ad60f49a9f",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure2/figure2a_score.py": {
+   "source": "figure2/figure2a_score.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "e4205408baf4594a874ca4b5cd08531853ed5bc14f3e7da8aa692455ee8d33d3",
+   "sha256_copy": "e4205408baf4594a874ca4b5cd08531853ed5bc14f3e7da8aa692455ee8d33d3",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure2/figure2b_create.py": {
+   "source": "figure2/figure2b_create.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "4ba8e0ac30cefe8ef3144ad47f5000b10b8abf4f2b72fab8fb311210804dbb09",
+   "sha256_copy": "4ba8e0ac30cefe8ef3144ad47f5000b10b8abf4f2b72fab8fb311210804dbb09",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure2/figure2b_run.py": {
+   "source": "figure2/figure2b_run.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "24c3677a8d91300e5f43193d1ca9406f54fdffafb4066904b65d0e0200321dd8",
+   "sha256_copy": "24c3677a8d91300e5f43193d1ca9406f54fdffafb4066904b65d0e0200321dd8",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure2/figure2b_score.py": {
+   "source": "figure2/figure2b_score.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "7502306c82b6935999ede7a3fe4d6bae2b1a9e8059b8c91f5854b65df8476514",
+   "sha256_copy": "7502306c82b6935999ede7a3fe4d6bae2b1a9e8059b8c91f5854b65df8476514",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure2/figure2c_create.py": {
+   "source": "figure2/figure2c_create.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "3f141d1ab958056a3bd19a2bc97224586b63dca47368763b6c14c2d2b53f21e1",
+   "sha256_copy": "3f141d1ab958056a3bd19a2bc97224586b63dca47368763b6c14c2d2b53f21e1",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure2/figure2c_run.py": {
+   "source": "figure2/figure2c_run.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "ef849c9a0be8d5aa02b9f885905c243b5233f56bec41ccb03ff5a40321b12bd8",
+   "sha256_copy": "ef849c9a0be8d5aa02b9f885905c243b5233f56bec41ccb03ff5a40321b12bd8",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure2/figure2c_score.py": {
+   "source": "figure2/figure2c_score.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "2e961279592fb5195f89b1ac26b27e8e305606ee061cf27d4bb4ddb77f659c55",
+   "sha256_copy": "2e961279592fb5195f89b1ac26b27e8e305606ee061cf27d4bb4ddb77f659c55",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure2/figure2d_create.py": {
+   "source": "figure2/figure2d_create.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "fabbb1b14cf461335d090b875652db9115df23b317acc1952b8972a5790a42c8",
+   "sha256_copy": "fabbb1b14cf461335d090b875652db9115df23b317acc1952b8972a5790a42c8",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure2/figure2d_run.py": {
+   "source": "figure2/figure2d_run.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "a3a05ba09fb45c05bbc537fc3e68292a9a4fafe1ff0c5c56ba52a63ce9cdd33d",
+   "sha256_copy": "a3a05ba09fb45c05bbc537fc3e68292a9a4fafe1ff0c5c56ba52a63ce9cdd33d",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure2/figure2d_score.py": {
+   "source": "figure2/figure2d_score.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "f62118cd6809f89e643bac7f60965feec839f496ee6896ec40b4d68714b7ec8d",
+   "sha256_copy": "f62118cd6809f89e643bac7f60965feec839f496ee6896ec40b4d68714b7ec8d",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure3/__init__.py": {
+   "source": "figure3/__init__.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "sha256_copy": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure3/figure3_common.py": {
+   "source": "figure3/figure3_common.py",
+   "kind": "full",
+   "repointed": [
+    "REAL_ORDER",
+    "DATASET_NAME"
+   ],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "18553c0f2b151634ca843a68abffb02ccc707a13cedc38a1c89aca348cbdd6fb",
+   "sha256_copy": "43240e8d29c15967d5d396ad3e1c6549d318a902fac4cd956c4fe8f8df99d7ce",
+   "rewritten": [
+    {
+     "line": 27,
+     "research_lines": 1,
+     "copy": "REAL_ORDER = (\"roaches\", \"ucbadmit\", \"baseball\", \"seeds\", \"radon\", \"kidiq\", \"golf\")  # bench.realdata order",
+     "research_sha256": "ddb3391a7ac3815b120bc7e19ef8c363e0cad69f26e9cadd14f5883d6777ff05"
+    },
+    {
+     "line": 28,
+     "research_lines": 1,
+     "copy": "DATASET_NAME = {\"ucbadmit\": \"UCBadmit\", \"kidiq\": \"KidIQ\"}",
+     "research_sha256": "7c70868164cc8c6ff34a39fcc20577ccd7d7c526bc05ea4c38e0aed15546506f"
+    }
+   ],
+   "notes": "window(s) at line(s) 27, 28 rewritten; everything else verbatim modulo imports"
+  },
+  "figure3/figure3_compose.py": {
+   "source": "figure3/figure3_compose.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "c091b1c22c6c364ca7468a29b7afbe760bbd3114700576e91be2e49d1518dab6",
+   "sha256_copy": "c091b1c22c6c364ca7468a29b7afbe760bbd3114700576e91be2e49d1518dab6",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure3/figure3_protocols.py": {
+   "source": "figure3/figure3_protocols.py",
+   "kind": "full",
+   "repointed": [
+    "MATRIX_ARMS"
+   ],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "5c13259f93c3b9ce728bf3740c2e15c6e8e1131c0b31435bef8c7d9d841b5d6d",
+   "sha256_copy": "11bb28c6e1116821eeb212ae9636d13cc12e6ab662e39435d0ae59f1264b5ca6",
+   "rewritten": [
+    {
+     "line": 3,
+     "research_lines": 2,
+     "copy": "nothing heavy. Panel c's arm is a census arm and lives in figure2/figure2_protocols.py\n(MATRIX_ARMS names it).",
+     "research_sha256": "4a6ae755dbdf25ba5bdda9ce7a105a520b6f2aa506557504049e49c277f1bc5f"
+    },
+    {
+     "line": 25,
+     "research_lines": 1,
+     "copy": "MATRIX_ARMS = (\"real-data_sonnet-4.6\",)  # panel c: a census arm, figure2's engine",
+     "research_sha256": "1f0ddcc9a906326606d5f5fe489404ce08ea87c237e7fd3f2cf63911ed4050bd"
+    }
+   ],
+   "notes": "window(s) at line(s) 3, 25 rewritten; everything else verbatim modulo imports"
+  },
+  "figure3/figure3_run.py": {
+   "source": "figure3/figure3_run.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "2437b92d3146376c1aad0bf904e5963062602b20462d10c72d9a6d466b52bab0",
+   "sha256_copy": "001f982fcb82dec935e01cf6b042b1911b7c52634f4810ae5dcc7d3285127398",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure3/figure3_score.py": {
+   "source": "figure3/figure3_score.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "c31f00bfcce6c407d1d102de93a19c1062a7bee92b82786e7011f93d7a1f6231",
+   "sha256_copy": "c31f00bfcce6c407d1d102de93a19c1062a7bee92b82786e7011f93d7a1f6231",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure3/figure3a_create.py": {
+   "source": "figure3/figure3a_create.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "fbbc6830813798101fad5820efe9a374268c1561718e9b6ae7b7ebd22e6d2cd6",
+   "sha256_copy": "fbbc6830813798101fad5820efe9a374268c1561718e9b6ae7b7ebd22e6d2cd6",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure3/figure3a_run.py": {
+   "source": "figure3/figure3a_run.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "546d64d7ad82d16c0d6860a3f8bac20a37813e064673583373cfbc8f0fdf91f4",
+   "sha256_copy": "546d64d7ad82d16c0d6860a3f8bac20a37813e064673583373cfbc8f0fdf91f4",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure3/figure3a_score.py": {
+   "source": "figure3/figure3a_score.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "276c98a53d135928129fcbfa12e65ac95c6997503b365f6bc3f3b81e3d2c6003",
+   "sha256_copy": "276c98a53d135928129fcbfa12e65ac95c6997503b365f6bc3f3b81e3d2c6003",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure3/figure3b_create.py": {
+   "source": "figure3/figure3b_create.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "670a9323ac463383896c0b2e1b81f02c674c968849afa9ecd10744a6a3d67c9c",
+   "sha256_copy": "670a9323ac463383896c0b2e1b81f02c674c968849afa9ecd10744a6a3d67c9c",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure3/figure3b_run.py": {
+   "source": "figure3/figure3b_run.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "6dfd24c661bb337bd1b247ab902d7419ac75948ae8797901ec97a6c9b52090b9",
+   "sha256_copy": "6dfd24c661bb337bd1b247ab902d7419ac75948ae8797901ec97a6c9b52090b9",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure3/figure3c_create.py": {
+   "source": "figure3/figure3c_create.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "53cac0336ed1d98662459e4a835bc9c005ce5d3d67222320dd4e74edf29976ec",
+   "sha256_copy": "3c7fc1ded2c9aeae29359715d7cf666432dd3008fba4eab75e466d032a820efe",
+   "rewritten": [
+    {
+     "line": 5,
+     "research_lines": 1,
+     "copy": "    python figure3/figure3c_create.py bench/arms/e1_anthropic_realdata_x2 --out fig3c.png",
+     "research_sha256": "fc9f083f7177acf5b1415db0f213c51ecdd7f4906fcb66c32cc25bd8e16fd23e"
+    }
+   ],
+   "notes": "window(s) at line(s) 5 rewritten; everything else verbatim modulo imports"
+  },
+  "figure3/figure3c_run.py": {
+   "source": "figure3/figure3c_run.py",
+   "kind": "full",
+   "repointed": [
+    "ARMS"
+   ],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "07e20274332775a9a63fe088dc4771a163f1c3c544df57d14eea97c0befd3fdc",
+   "sha256_copy": "c94c0f72467a47dd1fdcabda81fd81bad03ba5fff0053a67db27ab1d5217f909",
+   "rewritten": [
+    {
+     "line": 8,
+     "research_lines": 1,
+     "copy": "  --arm ARM        run only this arm; default: the arm of the panel",
+     "research_sha256": "1c36e6ca6034cc338929e18fb42fd1c06e0dacfef07e65d4e4386a6d64330d70"
+    },
+    {
+     "line": 14,
+     "research_lines": 6,
+     "copy": "  ARM      the one name in ARMS below:\n             real-data_sonnet-4.6        seven textbook datasets, three hidden splits, double MCMC budget\n                                         (the same arm Figure 2 draws; committed as e1_anthropic_realdata_x2)",
+     "research_sha256": "8f38815c4f8a381406c2b1b557f400f41bef100e0ad77a4a6efb370fd95f04bb"
+    },
+    {
+     "line": 17,
+     "research_lines": 3,
+     "copy": "  PREFIX   <dataset>_seed0[_s<split>]_r1 with <dataset> one of roaches, ucbadmit, baseball, seeds, radon,\n           kidiq, golf, and <split> 1 or 2 (split 0 has no suffix).\n           Examples: --only roaches (3 runs), --only golf_seed0_s1 (1 run).",
+     "research_sha256": "703232481061e7c5f94b2a80873ed5f097f15a39114c4dfd118a14a19acfbec5"
+    },
+    {
+     "line": 22,
+     "research_lines": 4,
+     "copy": "This is a census arm: each run is the Figure 2 protocol (the agent revises the textbook model,\nthe live rules judge every candidate, template controls are fitted and judged), run by\nfigure2/figure2_run.py. 21 runs, about 15 minutes and $0.80 each. A run whose record exists is skipped.",
+     "research_sha256": "aa996560b197f9157abd308f793bd8dd5edf4bd6c14ad230e3c410aa0a4f59cb"
+    },
+    {
+     "line": 40,
+     "research_lines": 1,
+     "copy": "ARMS = (\"real-data_sonnet-4.6\",)",
+     "research_sha256": "5245c12ca2ba28bea9a7c4cbfa998fb28ea38a4813c99ab49035b0bff8d71bf5"
+    }
+   ],
+   "notes": "window(s) at line(s) 8, 14, 17, 22, 40 rewritten; everything else verbatim modulo imports"
+  },
+  "figure3/figure3c_score.py": {
+   "source": "figure3/figure3c_score.py",
+   "kind": "full",
+   "repointed": [
+    "ARMS"
+   ],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "d40b37809b6b867a4f22d88dc0a4a2fd92aa09e4d0dabf2dac5ed7deed665298",
+   "sha256_copy": "2365f08e606f616d9648480d54cd276593eed140861a26b098767a57c3a503fb",
+   "rewritten": [
+    {
+     "line": 7,
+     "research_lines": 1,
+     "copy": "  --arm ARM        score only this arm; default: the arm of the panel",
+     "research_sha256": "7b749eb8cb23ca42042986bdbc4250bec2a8e69d7778e3d9e6bc2ae0a89225d1"
+    },
+    {
+     "line": 14,
+     "research_lines": 3,
+     "copy": "  ARM      real-data_sonnet-4.6 (figure3c_run.py says what it is).\n  LIST     provider:model pairs separated by commas, e.g. openai:gpt-5. Without --readers the arm gets its\n           GPT-5 reader (the matrix's \"Independent model\" column).",
+     "research_sha256": "1cbcd2206a7f1753baa19105c54bcf309ea3659199895e64f01cd564c6d2c2c8"
+    },
+    {
+     "line": 37,
+     "research_lines": 1,
+     "copy": "ARMS = (\"real-data_sonnet-4.6\",)",
+     "research_sha256": "5245c12ca2ba28bea9a7c4cbfa998fb28ea38a4813c99ab49035b0bff8d71bf5"
+    }
+   ],
+   "notes": "window(s) at line(s) 7, 14, 37 rewritten; everything else verbatim modulo imports"
+  },
+  "figure3/figure3e_run.py": {
+   "source": "figure3/figure3e_run.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "1190c380583b1e24bbbb91835aad7cc735e5220d8f97b5bdab6505e306255c5b",
+   "sha256_copy": "1190c380583b1e24bbbb91835aad7cc735e5220d8f97b5bdab6505e306255c5b",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure3/figure3e_score.py": {
+   "source": "figure3/figure3e_score.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "82a9ed48b9d6aee0a4dd1d698f30ee0b03ada28a765475f36266307dcb897ce0",
+   "sha256_copy": "82a9ed48b9d6aee0a4dd1d698f30ee0b03ada28a765475f36266307dcb897ce0",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure4/__init__.py": {
+   "source": "figure4/__init__.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "sha256_copy": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure4/figure4_create.py": {
+   "source": "figure4/figure4_create.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "97eabd147ff828811d49c3099c9dd79fecd19573386714e6eef5d1a2068e2655",
+   "sha256_copy": "97eabd147ff828811d49c3099c9dd79fecd19573386714e6eef5d1a2068e2655",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure4/figure4_run.py": {
+   "source": "figure4/figure4_run.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "ba0f4c5ad412adfe622a21cc6aaa3052c6fd0cb781a2113fbf5f4ad095122cd5",
+   "sha256_copy": "ba0f4c5ad412adfe622a21cc6aaa3052c6fd0cb781a2113fbf5f4ad095122cd5",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "figure4/figure4_score.py": {
+   "source": "figure4/figure4_score.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "a26cda8ca71e5c31a6eb15ef0dd58fdbadeb04736d46e0c04359b30f3d01e405",
+   "sha256_copy": "a26cda8ca71e5c31a6eb15ef0dd58fdbadeb04736d46e0c04359b30f3d01e405",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "bench/__init__.py": {
+   "source": "bench/__init__.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "9b52667f9b10cad56ae7f47fa49a62009b752979f85973cb0caeba9f2883a312",
+   "sha256_copy": "9b52667f9b10cad56ae7f47fa49a62009b752979f85973cb0caeba9f2883a312",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "bench/dgp.py": {
+   "source": "bench/dgp.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "29a3a63199f47c5b4ba69697fd6cacfce951edbf0a721c4f5f2805efe62afa77",
+   "sha256_copy": "29a3a63199f47c5b4ba69697fd6cacfce951edbf0a721c4f5f2805efe62afa77",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "bench/realdata.py": {
+   "source": "bench/realdata.py",
+   "kind": "full",
+   "repointed": [
+    "DATA_DIR",
+    "_DATASETS",
+    "__all__"
+   ],
+   "dropped": [],
+   "dropped_patterns": [
+    "^[A-Z]+_[A-Z]+_(BUDGET|FILE|CHANNELS|INT_SCALE|ORIGINAL)$",
+    "^load_[a-z_]+$"
+   ],
+   "new": [],
+   "new_imports": [
+    "import os"
+   ],
+   "dropped_imports": [],
+   "sha256_source": "ee4705b06c106dc1a55cf6b4f00eda822177033e6b89ffbfb367f147e548b7d1",
+   "sha256_copy": "480ef583c8ce979bffcbbc2e8baf6629627dbb4b59475f555b036c7b615c260d",
+   "rewritten": [
+    {
+     "line": 1,
+     "research_lines": 541,
+     "copy": "(the module without its eighth dataset)",
+     "research_sha256": "ee4705b06c106dc1a55cf6b4f00eda822177033e6b89ffbfb367f147e548b7d1"
+    },
+    {
+     "line": 24,
+     "research_lines": 1,
+     "copy": "DATA_DIR = Path(os.environ.get(\"COMPASS_DATA_DIR\",\n                                Path(__file__).resolve().parents[3] / \"tutorials\" / \"demos\" / \"data\"))  # research: parent.parent / \"tutorials\" / \"demos\" / \"data\"",
+     "research_sha256": "c5a6ed1cc9f395f696b5f59c2d0a7631c3a661fa5730206e740af26ca6eb5055"
+    }
+   ],
+   "notes": "window(s) at line(s) 1, 24 rewritten; everything else verbatim modulo imports"
+  },
+  "bench/holdout.py": {
+   "source": "bench/holdout.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "6e5f266ae97c26e50b9f4bbcdbcacc74763c766a530201adabd27fc9f31a8a87",
+   "sha256_copy": "39430f5682a639616b1754c1c9133b1e056c1998ef4d116ebb42c42789b09f5a",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  },
+  "bench/control_proposer.py": {
+   "source": "bench/control_proposer.py",
+   "kind": "full",
+   "repointed": [],
+   "dropped": [],
+   "dropped_patterns": [],
+   "new": [],
+   "new_imports": [],
+   "dropped_imports": [],
+   "sha256_source": "0a9725fe29177cd7855c9750dc05d8a9fe4abcb480fba7e95b016a652e8cad07",
+   "sha256_copy": "0a9725fe29177cd7855c9750dc05d8a9fe4abcb480fba7e95b016a652e8cad07",
+   "rewritten": [],
+   "notes": "verbatim modulo imports"
+  }
+ },
+ "not_covered": {
+  "render.py": "new driver (no research source): renders the manuscript's PDFs",
+  "compare_pdf.py": "new tool (no research source): date-neutral comparison of PDFs"
+ }
+}

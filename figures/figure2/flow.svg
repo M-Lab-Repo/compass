@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1204" role="img" aria-label="Order in which the figure2 scripts run and what each writes: run writes raw records, score writes label and reader side files, the create scripts write the four panel PNGs and print their tables, compose writes the sheet; protocols and common are imported by every step."><defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16202c"/></marker></defs><rect x="0" y="0" width="1000" height="1204" fill="#ffffff"/>
+<text x="40.0" y="44.0" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#16202c" text-anchor="start">figure2/: what runs, in which order, and what each step writes</text>
+<text x="40.0" y="80.0" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#4b5a6b" text-anchor="start">Rectangles are scripts you run; rounded teal boxes are what they write; each step reads what the one above wrote. Steps 1 and 2 call language models</text>
+<text x="40.0" y="96.0" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" font-weight="normal" fill="#4b5a6b" text-anchor="start">and MCMC and cannot be replayed exactly (models answer differently each time); steps 3 and 4 are deterministic from the files.</text>
+<rect x="40" y="118.0" width="600" height="116.9" rx="4" fill="#ffffff" stroke="#16202c" stroke-width="1.4"/>
+<text x="51.0" y="143.9" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#16202c" text-anchor="start">1 · Run the experiment</text>
+<text x="51.0" y="160.8" font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.5" font-weight="normal" fill="#16202c" text-anchor="start">figure2a_run.py · figure2b_run.py · figure2c_run.py · figure2d_run.py</text>
+<text x="51.0" y="176.7" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">Each thin file names its panel's arms and calls figure2_run.run_arm: the agent revises the model on</text>
+<text x="51.0" y="192.4" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">the visible fold, the live rules judge each candidate (execution check, the proposer itself, the</text>
+<text x="51.0" y="208.1" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">no-rationale control), the referee fits it; then three template edits of the baseline, and on</text>
+<text x="51.0" y="223.9" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">misspecified-baseline arms the gold fix, a decoy and an unchanged copy.</text>
+<text x="664.0" y="136.9" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#0b6e73" text-anchor="start">Needs the proposer's API key. About 8 minutes per</text>
+<text x="664.0" y="151.9" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#0b6e73" text-anchor="start">run; 618 runs for the whole figure.</text>
+<line x1="340.0" y1="234.9" x2="340.0" y2="268.9" stroke="#16202c" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="349.0" y="255.9" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#4b5a6b" text-anchor="start">writes</text>
+<rect x="40" y="268.9" width="600" height="67.5" rx="10" fill="#e3f1f1" stroke="#0b6e73" stroke-width="1.6"/>
+<text x="51.0" y="293.7" font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#0b6e73" text-anchor="start">runs/&lt;date&gt;/&lt;arm&gt;/&lt;type&gt;_seed&lt;s&gt;_r&lt;k&gt;.json</text>
+<text x="51.0" y="309.7" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">One raw record per run: the candidates with their code and rationale, the live verdicts, the referee's</text>
+<text x="51.0" y="325.4" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">verdict, the template controls, the arbiter cases. Never rewritten afterwards.</text>
+<line x1="340.0" y1="336.4" x2="340.0" y2="370.4" stroke="#16202c" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="349.0" y="357.4" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#4b5a6b" text-anchor="start">reads the records</text>
+<rect x="40" y="370.4" width="600" height="101.1" rx="4" fill="#ffffff" stroke="#16202c" stroke-width="1.4"/>
+<text x="51.0" y="396.4" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#16202c" text-anchor="start">2 · Score the results</text>
+<text x="51.0" y="413.2" font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.5" font-weight="normal" fill="#16202c" text-anchor="start">figure2a_score.py · figure2b_score.py · figure2c_score.py · figure2d_score.py</text>
+<text x="51.0" y="429.1" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">Each calls figure2_score.score_arm: every stored program is fitted on the hidden fold and on a fresh</text>
+<text x="51.0" y="444.8" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">draw from the true process to get its label; then independent readers judge every row from the same</text>
+<text x="51.0" y="460.6" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">prompt the live judges saw. Rows already done are skipped, so an interrupted pass resumes.</text>
+<text x="664.0" y="389.4" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#0b6e73" text-anchor="start">Labels: hours of CPU, no key. Readers: the reader</text>
+<text x="664.0" y="404.3" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#0b6e73" text-anchor="start">models' keys (Opus, GPT-5, ...).</text>
+<line x1="340.0" y1="471.6" x2="340.0" y2="505.6" stroke="#16202c" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="349.0" y="492.6" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#4b5a6b" text-anchor="start">writes</text>
+<rect x="40" y="505.6" width="294.0" height="83.3" rx="10" fill="#e3f1f1" stroke="#0b6e73" stroke-width="1.6"/>
+<text x="51.0" y="530.4" font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#0b6e73" text-anchor="start">scores/&lt;run&gt;.json</text>
+<text x="51.0" y="546.4" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">Hidden-fold and fresh-draw scores and labels</text>
+<text x="51.0" y="562.1" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">per row (genuine, confabulated, harmful).</text>
+<text x="51.0" y="577.8" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">MCMC only.</text>
+<rect x="346.0" y="505.6" width="294.0" height="67.5" rx="10" fill="#e3f1f1" stroke="#0b6e73" stroke-width="1.6"/>
+<text x="357.0" y="530.4" font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#0b6e73" text-anchor="start">readers/&lt;run&gt;.json</text>
+<text x="357.0" y="546.4" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">Each independent reader's verdict per row, with</text>
+<text x="357.0" y="562.1" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">the problem statement it was shown.</text>
+<line x1="340.0" y1="588.8" x2="340.0" y2="622.8" stroke="#16202c" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="349.0" y="609.8" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#4b5a6b" text-anchor="start">reads the records and both side files</text>
+<rect x="40" y="622.8" width="600" height="117.6" rx="4" fill="#ffffff" stroke="#16202c" stroke-width="1.4"/>
+<text x="51.0" y="648.8" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#16202c" text-anchor="start">3 · Count and draw each panel</text>
+<text x="51.0" y="665.6" font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.5" font-weight="normal" fill="#16202c" text-anchor="start">figure2a_create.py · figure2b_create.py · figure2c_create.py ·</text>
+<text x="51.0" y="682.1" font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.5" font-weight="normal" fill="#16202c" text-anchor="start">figure2d_create.py</text>
+<text x="51.0" y="698.0" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">Each takes record directories, counts what its panel shows (count), prints the numbers it is about to</text>
+<text x="51.0" y="713.7" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">draw (print_table) and writes one PNG (draw). Standard library and matplotlib only; nothing from the</text>
+<text x="51.0" y="729.4" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">pipeline is imported.</text>
+<rect x="664" y="622.8" width="316" height="83.3" rx="10" fill="none" stroke="#0b6e73" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="675.0" y="647.6" font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#0b6e73" text-anchor="start">$COMPASS_ARMS_DIR/&lt;arm&gt;/*.json</text>
+<text x="675.0" y="663.6" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">Or the paper's committed records: the same shape,</text>
+<text x="675.0" y="679.4" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">with the labels and reader verdicts stored inside the</text>
+<text x="675.0" y="695.1" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">record. Read the same way.</text>
+<line x1="664" y1="664.5" x2="642" y2="664.5" stroke="#16202c" stroke-width="1.4" marker-end="url(#arr)"/>
+<line x1="340.0" y1="740.4" x2="340.0" y2="774.4" stroke="#16202c" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="349.0" y="761.4" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#4b5a6b" text-anchor="start">writes</text>
+<rect x="40.0" y="774.4" width="142.5" height="65.5" rx="10" fill="#e3f1f1" stroke="#0b6e73" stroke-width="1.6"/>
+<text x="51.0" y="798.6" font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.5" font-weight="600" fill="#0b6e73" text-anchor="start">figure2a.png</text>
+<text x="51.0" y="813.9" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#4b5a6b" text-anchor="start">what the agent</text>
+<text x="51.0" y="829.0" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#4b5a6b" text-anchor="start">proposed, by label</text>
+<rect x="192.5" y="774.4" width="142.5" height="65.5" rx="10" fill="#e3f1f1" stroke="#0b6e73" stroke-width="1.6"/>
+<text x="203.5" y="798.6" font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.5" font-weight="600" fill="#0b6e73" text-anchor="start">figure2b.png</text>
+<text x="203.5" y="813.9" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#4b5a6b" text-anchor="start">who accepts the</text>
+<text x="203.5" y="829.0" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#4b5a6b" text-anchor="start">confabulated ones</text>
+<rect x="345.0" y="774.4" width="142.5" height="80.6" rx="10" fill="#e3f1f1" stroke="#0b6e73" stroke-width="1.6"/>
+<text x="356.0" y="798.6" font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.5" font-weight="600" fill="#0b6e73" text-anchor="start">figure2c.png</text>
+<text x="356.0" y="813.9" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#4b5a6b" text-anchor="start">the theorem and the</text>
+<text x="356.0" y="829.0" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#4b5a6b" text-anchor="start">two measured flat</text>
+<text x="356.0" y="844.0" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#4b5a6b" text-anchor="start">lines</text>
+<rect x="497.5" y="774.4" width="142.5" height="80.6" rx="10" fill="#e3f1f1" stroke="#0b6e73" stroke-width="1.6"/>
+<text x="508.5" y="798.6" font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.5" font-weight="600" fill="#0b6e73" text-anchor="start">figure2d.png</text>
+<text x="508.5" y="813.9" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#4b5a6b" text-anchor="start">when nothing is</text>
+<text x="508.5" y="829.0" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#4b5a6b" text-anchor="start">wrong (and</text>
+<text x="508.5" y="844.0" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="normal" fill="#4b5a6b" text-anchor="start">_families.png)</text>
+<text x="664.0" y="793.4" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#0b6e73" text-anchor="start">Each script also prints its table. Seconds, no key.</text>
+<line x1="340.0" y1="855.0" x2="340.0" y2="889.0" stroke="#16202c" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="349.0" y="876.0" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#4b5a6b" text-anchor="start">reads the four PNGs</text>
+<rect x="40" y="889.0" width="600" height="70.3" rx="4" fill="#ffffff" stroke="#16202c" stroke-width="1.4"/>
+<text x="51.0" y="914.9" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" fill="#16202c" text-anchor="start">4 · Compose the sheet</text>
+<text x="51.0" y="931.8" font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.5" font-weight="normal" fill="#16202c" text-anchor="start">figure2_compose.py figure2a.png figure2b.png figure2c.png figure2d.png --out</text>
+<text x="51.0" y="948.2" font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.5" font-weight="normal" fill="#16202c" text-anchor="start">figure2.png</text>
+<line x1="340.0" y1="959.2" x2="340.0" y2="993.2" stroke="#16202c" stroke-width="1.4" marker-end="url(#arr)"/>
+<text x="349.0" y="980.2" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#4b5a6b" text-anchor="start">writes</text>
+<rect x="40" y="993.2" width="600" height="51.8" rx="10" fill="#e3f1f1" stroke="#0b6e73" stroke-width="1.6"/>
+<text x="51.0" y="1018.0" font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#0b6e73" text-anchor="start">figure2.png</text>
+<text x="51.0" y="1034.0" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">The four panels on one sheet: a, c and d stacked on the left, b on the right.</text>
+<text x="40.0" y="1087.0" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#4b5a6b" text-anchor="start">Imported by the steps above, never run on their own</text>
+<rect x="40" y="1097.0" width="472.0" height="83.3" rx="4" fill="#ffffff" stroke="#16202c" stroke-width="1.4"/>
+<text x="51.0" y="1121.8" font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#16202c" text-anchor="start">figure2_protocols.py</text>
+<text x="51.0" y="1137.9" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">The ten arms as data: protocol flags, proposer model, types or datasets, which</text>
+<text x="51.0" y="1153.6" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">readers score them, MCMC budgets. Used by the run and score steps and by</text>
+<text x="51.0" y="1169.3" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">the thin files.</text>
+<rect x="528.0" y="1097.0" width="472.0" height="67.5" rx="4" fill="#ffffff" stroke="#16202c" stroke-width="1.4"/>
+<text x="539.0" y="1121.8" font-family="IBM Plex Mono, Menlo, Consolas, monospace" font-size="12" font-weight="600" fill="#16202c" text-anchor="start">figure2_common.py</text>
+<text x="539.0" y="1137.9" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">Read records and join the side files, the label rule (fresh draw or hidden fold, 2</text>
+<text x="539.0" y="1153.6" font-family="Source Sans 3, Segoe UI, Helvetica, Arial, sans-serif" font-size="11" font-weight="normal" fill="#4b5a6b" text-anchor="start">SE), read a verdict, rule names and colours. Used by every script.</text>
+</svg>

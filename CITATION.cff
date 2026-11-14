@@ -1,0 +1,30 @@
+# Citation metadata for the COMPASS software (Citation File Format 1.2.0). GitHub reads this
+# file for its "Cite this repository" box. The DOI of the release will be added here when the
+# Zenodo archive of the release exists. The license has no SPDX identifier, so it is given as a
+# URL. (ORCID: to be added by the author.)
+cff-version: 1.2.0
+message: "If you use COMPASS in your work, please cite it using the metadata in this file."
+type: software
+title: "COMPASS: statistically verified refinement of probabilistic programs"
+version: 0.3.0
+date-released: 2026-11-14
+authors:
+  - family-names: Gabitto
+    given-names: Mariano
+    affiliation: Allen Institute
+repository-code: "https://github.com/M-Lab-Repo/compass"
+url: "https://github.com/M-Lab-Repo/compass"
+abstract: >-
+  COMPASS refines Bayesian models written as NumPyro programs. Language-model agents diagnose
+  the model, search the statistical literature and propose candidate refinements; a
+  deterministic verifier with no language model in it fits the baseline and the candidate with
+  MCMC and accepts a refinement only when a fixed statistical rule is met.
+keywords:
+  - bayesian-statistics
+  - probabilistic-programming
+  - numpyro
+  - model-criticism
+  - cross-validation
+  - mcmc
+  - llm-agents
+license-url: "https://github.com/M-Lab-Repo/compass/blob/main/LICENSE.txt"

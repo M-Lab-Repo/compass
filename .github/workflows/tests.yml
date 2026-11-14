@@ -1,0 +1,45 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# the workflow only reads the repository; nothing here writes to it or to its API
+permissions:
+  contents: read
+
+# a new push to the same branch or pull request supersedes the run still in progress
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        # 3.12 resolves a different dependency set (arviz 0.23 is the last line below 1.x;
+        # the `arviz<1` bound in pyproject.toml keeps arviz.waic available there)
+        python-version: ["3.10", "3.11", "3.12"]
+    env:
+      JAX_PLATFORMS: cpu
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+      - name: Install the package with the test and figure extras
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e '.[dev,figures]'
+      - name: Tests (the package and the figure code; fast, offline)
+        run: pytest tests -q -m "not slow"
+      - name: Lint
+        run: ruff check .
