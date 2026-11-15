@@ -1,6 +1,6 @@
 # COMPASS
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24237039.svg)](https://doi.org/10.5281/zenodo.24237039)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24212300.svg)](https://doi.org/10.5281/zenodo.24212300)
 
 **Statistically verified refinement of probabilistic programs with literature-grounded agents and a deterministic MCMC verifier.**
 
@@ -577,9 +577,10 @@ change between minor versions (`CHANGELOG.md` records every such change).
 ## Citing COMPASS
 
 The paper is in preparation. Until it appears, cite the software: release 0.3.0 is archived on
-Zenodo under the DOI [10.5281/zenodo.24237039](https://doi.org/10.5281/zenodo.24237039), which is
-also in `CITATION.cff`, so GitHub's "Cite this repository" button renders the reference as BibTeX
-or APA. The benchmark records travel as an asset of the GitHub release (see "Reproducing the
+Zenodo under the version DOI [10.5281/zenodo.24237039](https://doi.org/10.5281/zenodo.24237039)
+(cite this one); the concept DOI [10.5281/zenodo.24212300](https://doi.org/10.5281/zenodo.24212300)
+always resolves to the latest archived version. Both are in `CITATION.cff`, so GitHub's "Cite this
+repository" button renders the reference as BibTeX or APA. The benchmark records travel as an asset of the GitHub release (see "Reproducing the
 paper's figures and experiments"); Zenodo archives the source tree, not the asset.
 
 ## License

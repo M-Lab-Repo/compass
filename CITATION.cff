@@ -1,5 +1,6 @@
 # Citation metadata for the COMPASS software (Citation File Format 1.2.0). GitHub reads this
-# file for its "Cite this repository" box. `doi` is the Zenodo DOI of this release's archive.
+# file for its "Cite this repository" box. `doi` is the Zenodo DOI of this release's archive; the
+# concept DOI under `identifiers` always resolves to the latest archived version.
 # The license has no SPDX identifier, so it is given as a URL. (ORCID: to be added by the
 # author.)
 cff-version: 1.2.0
@@ -12,7 +13,10 @@ doi: 10.5281/zenodo.24237039
 identifiers:
   - type: doi
     value: 10.5281/zenodo.24237039
-    description: "Zenodo archive of release 0.3.0"
+    description: "Zenodo archive of release 0.3.0 (version DOI; cite this one)"
+  - type: doi
+    value: 10.5281/zenodo.24212300
+    description: "Zenodo concept DOI; resolves to the latest archived version"
 authors:
   - family-names: Gabitto
     given-names: Mariano
