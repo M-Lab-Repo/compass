@@ -1,5 +1,7 @@
 # COMPASS
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24237039.svg)](https://doi.org/10.5281/zenodo.24237039)
+
 **Statistically verified refinement of probabilistic programs with literature-grounded agents and a deterministic MCMC verifier.**
 
 COMPASS is a verifier-first system for refining Bayesian models. LLM agents diagnose model weaknesses, search the statistical literature, propose evidence-grounded refinements, and synthesize candidate probabilistic programs. Initially meant for Stan and Numpyro, its current implementation is numpyro heavy. A separate deterministic verifier fits the baseline and candidate models with NUTS and decides whether a proposed refinement is supported by the data.
@@ -574,10 +576,11 @@ change between minor versions (`CHANGELOG.md` records every such change).
 
 ## Citing COMPASS
 
-The paper is in preparation. Until it appears, and until a Zenodo archive of the release exists,
-cite the repository: `CITATION.cff` carries the metadata, and GitHub's "Cite this repository"
-button renders it as BibTeX or APA. The benchmark records travel as an asset of the GitHub
-release (see "Reproducing the paper's figures and experiments").
+The paper is in preparation. Until it appears, cite the software: release 0.3.0 is archived on
+Zenodo under the DOI [10.5281/zenodo.24237039](https://doi.org/10.5281/zenodo.24237039), which is
+also in `CITATION.cff`, so GitHub's "Cite this repository" button renders the reference as BibTeX
+or APA. The benchmark records travel as an asset of the GitHub release (see "Reproducing the
+paper's figures and experiments"); Zenodo archives the source tree, not the asset.
 
 ## License
 

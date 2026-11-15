@@ -5,6 +5,6 @@ Notable changes to COMPASS (the `compass-refine` package). The format follows
 [Semantic Versioning](https://semver.org/). The version is declared in `pyproject.toml` and in
 `src/compass/__init__.py`.
 
-## [0.3.0] - 2026-11-14
+## [0.3.0] - 2026-11-15
 
-Initial public release.
+Initial public release. Archived on Zenodo: https://doi.org/10.5281/zenodo.24237039

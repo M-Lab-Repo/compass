@@ -1,13 +1,18 @@
 # Citation metadata for the COMPASS software (Citation File Format 1.2.0). GitHub reads this
-# file for its "Cite this repository" box. The DOI of the release will be added here when the
-# Zenodo archive of the release exists. The license has no SPDX identifier, so it is given as a
-# URL. (ORCID: to be added by the author.)
+# file for its "Cite this repository" box. `doi` is the Zenodo DOI of this release's archive.
+# The license has no SPDX identifier, so it is given as a URL. (ORCID: to be added by the
+# author.)
 cff-version: 1.2.0
 message: "If you use COMPASS in your work, please cite it using the metadata in this file."
 type: software
 title: "COMPASS: statistically verified refinement of probabilistic programs"
 version: 0.3.0
-date-released: 2026-11-14
+date-released: 2026-11-15
+doi: 10.5281/zenodo.24237039
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24237039
+    description: "Zenodo archive of release 0.3.0"
 authors:
   - family-names: Gabitto
     given-names: Mariano
